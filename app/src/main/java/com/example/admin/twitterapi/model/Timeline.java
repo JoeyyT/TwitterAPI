@@ -2,7 +2,6 @@ package com.example.admin.twitterapi.model;
 
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import org.json.JSONArray;
@@ -16,13 +15,13 @@ import java.util.List;
 import java.util.Scanner;
 
 import com.example.admin.twitterapi.R;
-import com.example.admin.twitterapi.activity.MainActivity;
+import com.example.admin.twitterapi.TimelineAdapter;
 
 public class Timeline extends AppCompatActivity {
 
     private String content;
     private Tweet tweet;
-    private ArrayList<Tweet> tweets = new ArrayList<>();
+    private List<Tweet> tweets = new ArrayList<>();
 
     public Timeline() {
     }
@@ -54,7 +53,7 @@ public class Timeline extends AppCompatActivity {
         }
 
         TimelineAdapter arrayAdapter = new TimelineAdapter(context, R.layout.cell ,tweets);
-        final ListView timelineListView = (ListView) findViewById(R.id.timelineListView);
+        ListView timelineListView = (ListView) findViewById(R.id.timelineListView);
         timelineListView.setAdapter(arrayAdapter);
 
 
