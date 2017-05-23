@@ -21,7 +21,6 @@ import com.example.admin.twitterapi.activity.MainActivity;
 public class Timeline extends AppCompatActivity {
 
     private String content;
-    private ListView timelineListView;
     private Tweet tweet;
     private ArrayList<Tweet> tweets = new ArrayList<>();
 
@@ -54,12 +53,8 @@ public class Timeline extends AppCompatActivity {
             ex.printStackTrace();
         }
 
-        ArrayAdapter<Tweet> arrayAdapter = new ArrayAdapter<>(
-                context,
-                android.R.layout.simple_list_item_1, tweets);
-
-
-        timelineListView = (ListView) ((MainActivity) context).findViewById(R.id.timelineListView);
+        TimelineAdapter arrayAdapter = new TimelineAdapter(context, R.layout.cell ,tweets);
+        final ListView timelineListView = (ListView) findViewById(R.id.timelineListView);
         timelineListView.setAdapter(arrayAdapter);
 
 
