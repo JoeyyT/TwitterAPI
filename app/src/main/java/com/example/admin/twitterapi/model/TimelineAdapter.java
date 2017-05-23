@@ -1,4 +1,4 @@
-package com.example.admin.twitterapi;
+package com.example.admin.twitterapi.model;
 
 import android.content.Context;
 import android.support.annotation.IdRes;
