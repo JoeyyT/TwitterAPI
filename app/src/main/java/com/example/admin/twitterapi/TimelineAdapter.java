@@ -1,4 +1,4 @@
-package com.example.admin.twitterapi.model;
+package com.example.admin.twitterapi;
 
 import android.content.Context;
 import android.support.annotation.IdRes;
@@ -12,8 +12,8 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.example.admin.twitterapi.R;
+import com.example.admin.twitterapi.model.Tweet;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
