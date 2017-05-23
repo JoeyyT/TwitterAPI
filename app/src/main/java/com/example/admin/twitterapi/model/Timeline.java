@@ -11,6 +11,7 @@ import org.json.JSONObject;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -22,7 +23,8 @@ public class Timeline extends AppCompatActivity {
 
     private String content;
     private Tweet tweet;
-    private ArrayList<Tweet> tweets = new ArrayList<>();
+    private List<Tweet> tweets = new ArrayList<>();
+    ListView timelineListView;
 
     public Timeline() {
     }
@@ -37,7 +39,7 @@ public class Timeline extends AppCompatActivity {
         }
     }
 
-    public void jsonParser(Context context) {
+    public List<Tweet> jsonParser(Context context) {
 
         try {
             JSONObject jObj = new JSONObject(content);
@@ -53,10 +55,9 @@ public class Timeline extends AppCompatActivity {
             ex.printStackTrace();
         }
 
-        TimelineAdapter arrayAdapter = new TimelineAdapter(context, R.layout.cell ,tweets);
-        final ListView timelineListView = (ListView) findViewById(R.id.timelineListView);
-        timelineListView.setAdapter(arrayAdapter);
 
+
+        return tweets;
 
     }
 }
